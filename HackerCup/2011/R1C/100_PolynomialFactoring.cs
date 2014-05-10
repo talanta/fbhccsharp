@@ -9,7 +9,11 @@ namespace HackerCup._2011.R1C
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=157714037613443&round=173585106010813
     /// </summary>
-    public class PolynomialFactoring
+    public class PolynomialFactoring : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

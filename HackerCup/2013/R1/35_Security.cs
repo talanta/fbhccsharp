@@ -37,7 +37,11 @@ namespace HackerCup._2013.R1
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=386960221400382&round=189890111155691
     /// </summary>
-    public class Security
+    public class Security : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

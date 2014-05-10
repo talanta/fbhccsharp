@@ -9,7 +9,11 @@ namespace HackerCup._2011.R3
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=164535313595986&round=188859297819219
     /// </summary>
-    public class SafestPlace
+    public class SafestPlace : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

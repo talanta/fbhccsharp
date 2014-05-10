@@ -9,7 +9,11 @@ namespace HackerCup._2012.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=341666075863455&round=146094915502528
     /// </summary>
-    public class AlphabetSoup
+    public class AlphabetSoup : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

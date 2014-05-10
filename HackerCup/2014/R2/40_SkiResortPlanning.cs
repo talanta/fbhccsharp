@@ -9,7 +9,11 @@ namespace HackerCup._2014.R2
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=264320743716595&round=544142832342014
     /// </summary>
-    public class SkiResortPlanning
+    public class SkiResortPlanning : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace HackerCup._2013.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=494433657264959&round=185564241586420
     /// </summary>
-    public class FindTheMin
+    public class FindTheMin : IExecutable
     {
         public class PairLong : IComparable
         {
@@ -62,16 +62,16 @@ namespace HackerCup._2013.Qualification
                     return 0;
                 if (Occurence == cc.Occurence)
                 {
-                    return (int) (Item1 - cc.Item1);
+                    return (int)(Item1 - cc.Item1);
                 }
-                return (int) ( Occurence - cc.Occurence);
+                return (int)(Occurence - cc.Occurence);
             }
         }
 
-        public int Execute(string l1, string l2)
+        public string[] Execute(params string[] input)
         {
-            var split1 = l1.Split();
-            var split2 = l2.Split();
+            var split1 = input[0].Split();
+            var split2 = input[1].Split();
             int n = int.Parse(split1[0]), k = int.Parse(split1[1]);
 
             long b = int.Parse(split2[1]), c = int.Parse(split2[2]), r = int.Parse(split2[3]);
@@ -85,7 +85,7 @@ namespace HackerCup._2013.Qualification
                 _array[i] = (b * _array[i - 1] + c) % r;
             }
 
-            
+
             PairLong[] f = new PairLong[2 * k + 1];
 
             SortedSet<PairLong> tree = new SortedSet<PairLong>();
@@ -113,9 +113,9 @@ namespace HackerCup._2013.Qualification
 
                 _array[i] = first.Item1;
 
-                if (_array[i-k] <= 2*k)
+                if (_array[i - k] <= 2 * k)
                 {
-                    PairLong rem = f[_array[i-k]];
+                    PairLong rem = f[_array[i - k]];
                     tree.Remove(rem);
                     rem.Occurence--;
                     tree.Add(rem);
@@ -126,7 +126,7 @@ namespace HackerCup._2013.Qualification
 
             int index = (n - k - 1) % (k + 1);
 
-            return (int) _array[k + index];
+            return new[] { Convert.ToString(_array[k + index]) };
         }
     }
 }

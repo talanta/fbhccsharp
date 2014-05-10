@@ -9,7 +9,11 @@ namespace HackerCup._2014.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=740733162607577&round=598486203541358
     /// </summary>
-    public class BasketballGame
+    public class BasketballGame : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,7 +9,11 @@ namespace HackerCup._2012.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=215823855164332&round=146094915502528
     /// </summary>
-    public class Billboards
+    public class Billboards : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,7 +9,11 @@ namespace HackerCup._2011.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=157960964217186&round=4
     /// </summary>
-    public class PegGame
+    public class PegGame : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

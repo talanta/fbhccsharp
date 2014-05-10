@@ -35,11 +35,12 @@ namespace HackerCup._2013.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=403525256396727&round=185564241586420
     /// </summary>
-    public class BalancedSmileys
+    public class BalancedSmileys : IExecutable
     {
-        public int Execute(string input)
+
+        public string[] Execute(params string[] input)
         {
-            return 0;
+            throw new NotImplementedException();
         }
     }
 }

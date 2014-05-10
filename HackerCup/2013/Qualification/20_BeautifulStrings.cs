@@ -28,15 +28,15 @@ namespace HackerCup._2013.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=475986555798659&round=185564241586420
     /// </summary>
-    public class BeautifulStrings
+    public class BeautifulStrings : IExecutable
     {
 
-        public int Execute(string input)
+        public string[] Execute(params string[] inputs)
         {
             int result = 0;
             int beauty = 26;
-            input = input.ToLower();
-            Dictionary<char, int> frequencies = new Dictionary<char,int>();
+            string input = inputs[0].ToLower();
+            Dictionary<char, int> frequencies = new Dictionary<char, int>();
             foreach (char x in input)
             {
                 if (!char.IsLetter(x))
@@ -49,11 +49,11 @@ namespace HackerCup._2013.Qualification
 
             foreach (var cc in list)
             {
-                result += beauty* frequencies[cc];
+                result += beauty * frequencies[cc];
                 beauty--;
             }
-
-            return result;
+            return new[] { result.ToString() };
         }
+
     }
 }

@@ -9,7 +9,11 @@ namespace HackerCup._2014.R3
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=291408124369300&round=180228228840273
     /// </summary>
-    public class IntervalsOfLove
+    public class IntervalsOfLove : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

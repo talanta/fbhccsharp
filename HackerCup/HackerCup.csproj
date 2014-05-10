@@ -101,6 +101,7 @@
     <Compile Include="2014\R3\20_LunchAtFacebook.cs" />
     <Compile Include="2014\R3\33_FortunateWheels.cs" />
     <Compile Include="2014\R3\37_Tours.cs" />
+    <Compile Include="IExecutable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

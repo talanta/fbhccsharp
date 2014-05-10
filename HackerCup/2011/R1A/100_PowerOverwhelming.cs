@@ -9,7 +9,11 @@ namespace HackerCup._2011.R1A
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=187006817978553&round=144428782277390
     /// </summary>
-    public class PowerOverwhelming
+    public class PowerOverwhelming : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -30,7 +30,11 @@ namespace HackerCup._2013.R1
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=321892127915788&round=189890111155691
     /// </summary>
-    public class CardGame
+    public class CardGame : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

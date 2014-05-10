@@ -9,7 +9,11 @@ namespace HackerCup._2014.Qualification
     /// <summary>
     /// https://www.facebook.com/hackercup/problems.php?pid=373965339404375&round=598486203541358
     /// </summary>
-    public class Tennison
+    public class Tennison : IExecutable
     {
+        public string[] Execute(params string[] input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
