@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.22310.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerCup", "HackerCup\HackerCup.csproj", "{A5DECA04-53C1-46A6-ADB4-C4FF19D9B3DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerCup.Test", "HackerCup.Test\HackerCup.Test.csproj", "{929D4A11-6319-42A6-A2AE-350115145972}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerCup.Console", "HackerCup.Console\HackerCup.Console.csproj", "{E3F35064-68C8-4BC6-A6DC-1AB28C0983FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerCup.UnitTest", "HackerCup.UnitTest\HackerCup.UnitTest.csproj", "{26A0A9C5-1E76-45E9-98ED-AC5B0B7D2B2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C8E225DC-4DBB-441C-915F-033F29077590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +31,10 @@ Global
 		{E3F35064-68C8-4BC6-A6DC-1AB28C0983FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3F35064-68C8-4BC6-A6DC-1AB28C0983FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3F35064-68C8-4BC6-A6DC-1AB28C0983FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A0A9C5-1E76-45E9-98ED-AC5B0B7D2B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A0A9C5-1E76-45E9-98ED-AC5B0B7D2B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A0A9C5-1E76-45E9-98ED-AC5B0B7D2B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A0A9C5-1E76-45E9-98ED-AC5B0B7D2B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
