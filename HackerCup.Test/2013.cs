@@ -2,185 +2,136 @@
 using HackerCup._2013.R1;
 using HackerCup._2013.R2;
 using HackerCup._2013.R3;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace HackerCup.Test
 {
-    [TestClass]
     public class _2013
     {
-
-        [TestMethod]
-        public void _BeautifulStrings()
+        [Theory]
+        [InlineData("ABbCcc", "152")]
+        [InlineData("Good luck in the Facebook Hacker Cup this year!", "754")]
+        [InlineData("Ignore punctuation, please :)", "491")]
+        [InlineData("Sometimes test cases are hard to make up.", "729")]
+        [InlineData("So I just go consult Professor Dalves", "646")]
+        public void _BeautifulStrings(string input, string expectedResult)
         {
-            var bf = new BeautifulStrings();
+            var tested = new BeautifulStrings();
 
-            Helper.CustomAreEqual("152", bf.Execute("ABbCcc"));
-            Helper.CustomAreEqual("754", bf.Execute("Good luck in the Facebook Hacker Cup this year!"));
-            Helper.CustomAreEqual("491", bf.Execute("Ignore punctuation, please :)"));
-            Helper.CustomAreEqual("729", bf.Execute("Sometimes test cases are hard to make up."));
-            Helper.CustomAreEqual("646", bf.Execute("So I just go consult Professor Dalves"));
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
 
-        [TestMethod]
+        [Fact]
         public void _BeautifulStrings_large()
         {
-            Helper.RunLarge<BeautifulStrings>("Assets/beautiful_strings.txt", 1);
+            Assert.True(Helper.RunLarge<BeautifulStrings>(TestResources.beautiful_strings, 1));
         }
 
-        [TestMethod]
-        public void _BalancedSmileys()
+        [Theory]
+        [InlineData(":((", "NO")]
+        [InlineData("i am sick today (:()", "YES")]
+        [InlineData("(:)", "YES")]
+        [InlineData("hacker cup: started :):)", "YES")]
+        [InlineData(")(", "NO")]
+        public void _BalancedSmileys(string input, string expectedResult)
         {
-            var bm = new BalancedSmileys();
-
-            Helper.CustomAreEqual("NO", bm.Execute(":(("));
-            Helper.CustomAreEqual("YES", bm.Execute("i am sick today (:()"));
-            Helper.CustomAreEqual("YES", bm.Execute("(:)"));
-            Helper.CustomAreEqual("YES", bm.Execute("hacker cup: started :):)"));
-            Helper.CustomAreEqual("NO", bm.Execute(")("));
+            var tested = new BalancedSmileys();
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _FindTheMin()
+
+        [Theory]
+        [InlineData("97 39", "34 37 656 97", "8")]
+        [InlineData("186 75", "68 16 539 186", "38")]
+        [InlineData("137 49", "48 17 461 137", "41")]
+        [InlineData("98 59", "6 30 524 98", "40")]
+        [InlineData("46 18", "7 11 9 46", "12")]
+        public void _FindTheMin(string p0, string p1, string expectedResult)
         {
-            var fm = new FindTheMin();
+            var tested = new FindTheMin();
 
-            Helper.CustomAreEqual("8", fm
-                .Execute("97 39", "34 37 656 97"));
-            Helper.CustomAreEqual("38", fm
-                .Execute("186 75", "68 16 539 186"));
-            Helper.CustomAreEqual("41", fm
-                .Execute("137 49", "48 17 461 137"));
-            Helper.CustomAreEqual("40", fm
-                .Execute("98 59", "6 30 524 98"));
-            Helper.CustomAreEqual("12", fm
-                .Execute("46 18", "7 11 9 46"));
+            Assert.Equal(expectedResult, tested.Execute(p0,p1)[0]);
         }
 
-        [TestMethod]
+        [Fact]
         public void _FindTheMin_large()
         {
-            Helper.RunLarge<FindTheMin>("Assets/find_the_min.txt", 2);
+            Assert.True(Helper.RunLarge<FindTheMin>(TestResources.find_the_min, 2));
         }
 
-        [TestMethod]
-        public void _CardGame()
+        [Theory]
+        [InlineData("4 3", "3 6 2 8", "30")]
+        [InlineData("5 2", "10 20 30 40 50", "400")]
+        [InlineData("6 4", "0 1 2 3 5 8", "103")]
+        [InlineData("2 2", "1069 1122", "1122")]
+        [InlineData("10 5", "10386 10257 10432 10087 10381 10035 10167 10206 10347 10088", "2621483")]
+        public void _CardGame(string p0, string p1, string expectedResult)
         {
-            var t = new CardGame();
+            var tested = new CardGame();
 
-            Helper.CustomAreEqual("30", t
-                .Execute("4 3", "3 6 2 8"));
-            Helper.CustomAreEqual("400", t
-                .Execute("5 2", "10 20 30 40 50"));
-            Helper.CustomAreEqual("103", t
-                .Execute("6 4", "0 1 2 3 5 8"));
-            Helper.CustomAreEqual("1122", t
-                .Execute("2 2", "1069 1122"));
-            Helper.CustomAreEqual("2621483", t
-                .Execute("10 5", "10386 10257 10432 10087 10381 10035 10167 10206 10347 10088"));
-
+            Assert.Equal(expectedResult, tested.Execute(p0, p1)[0]);
         }
 
-        [TestMethod]
         public void _CardGame_large()
         {
-            Helper.RunLarge<CardGame>("Assets/card_game.txt", 2);
+          //  Assert.True(Helper.RunLarge<CardGame>(TestResources.car, 1));
+            //Helper.RunLarge<CardGame>("Assets/card_game.txt", 2);
         }
 
-        [TestMethod]
-        public void _Security()
+
+        public void _Security(string input, string expectedResult)
         {
-            var t = new Security();
-
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
+            var tested = new Security();
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _DeadPixels()
+
+        public void _DeadPixels(string input, string expectedResult)
         {
-            var t = new DeadPixels();
+            var tested = new DeadPixels();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _CakeCutting()
+
+        public void _CakeCutting(string input, string expectedResult)
         {
-            var t = new CakeCutting();
+            var tested = new CakeCutting();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _RoboElection()
+
+        public void _RoboElection(string input, string expectedResult)
         {
-            var t = new RoboElection();
+            var tested = new RoboElection();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _Permutations()
+
+        public void _Permutations(string input, string expectedResult)
         {
-            var t = new Permutations();
+            var tested = new Permutations();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _DigitsWar()
+
+        public void _DigitsWar(string input, string expectedResult)
         {
-            var t = new DigitsWar();
+            var tested = new DigitsWar();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _NameTheBaby()
+
+        public void _NameTheBaby(string input, string expectedResult)
         {
-            var t = new NameTheBaby();
+            var tested = new NameTheBaby();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-        [TestMethod]
-        public void _GreedyEntertainers()
+
+
+        public void _GreedyEntertainers(string input, string expectedResult)
         {
-            var t = new GreedyEntertainers();
+            var tested = new GreedyEntertainers();
 
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-            Helper.CustomAreEqual("XX", t.Execute("XX"));
-
+            Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
-
     }
 }

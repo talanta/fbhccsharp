@@ -25,11 +25,11 @@ namespace HackerCup.Test
             Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
 
-        //[Fact]
-        //public void _DoubleSquares_large()
-        //{
-        //    Helper.RunLarge<DoubleSquares>("Assets/double_squares.txt", 1);
-        //}
+        [Fact]
+        public void Should_return_Double_Squares_when_running_large_input()
+        {
+            Assert.True(Helper.RunLarge<DoubleSquares>(TestResources.double_squares, 1));
+        }
 
         [Theory]
         [InlineData("5 4 0 1 2 2", "0 0.375000")]
@@ -44,11 +44,11 @@ namespace HackerCup.Test
             Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
 
-        //[TestMethod]
-        //public void _PegGame_large()
-        //{
-        //    Helper.RunLarge<DoubleSquares>("Assets/peg_game.txt", 1);
-        //}
+        [Fact]
+        public void Should_return_Peg_game_when_running_large_input()
+        {
+            Assert.True(Helper.RunLarge<PegGame>(TestResources.peg_game, 1));
+        }
 
         [Theory]
         [InlineData("6 facebook hacker cup for studious students", "cupfacebookforhackerstudentsstudious")]
@@ -64,11 +64,11 @@ namespace HackerCup.Test
         }
 
 
-        //[Fact]
-        //public void _StudiousStudent_large()
-        //{
-        //    Helper.RunLarge<StudiousStudent>("Assets/studious_student.txt", 1);
-        //}
+        [Fact]
+        public void _StudiousStudent_large()
+        {
+            Assert.True(Helper.RunLarge<StudiousStudent>(TestResources.studious_student, 1));
+        }
 
         [Theory]
         [InlineData("XX", "XX")]
