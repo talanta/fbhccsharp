@@ -9,9 +9,12 @@ namespace HackerCup._2013.Qualification
     /*
     Balanced Smileys
 
-    Your friend John uses a lot of emoticons when you talk to him on Messenger. In addition to being a person who likes to express himself through emoticons, he hates unbalanced parenthesis so much that it makes him go :(
+    Your friend John uses a lot of emoticons when you talk to him on Messenger. In addition 
+    to being a person who likes to express himself through emoticons, he hates unbalanced parenthesis 
+    so much that it makes him go :(
 
-    Sometimes he puts emoticons within parentheses, and you find it hard to tell if a parenthesis really is a parenthesis or part of an emoticon.
+    Sometimes he puts emoticons within parentheses, and you find it hard to tell if a parenthesis 
+    really is a parenthesis or part of an emoticon.
 
     A message has balanced parentheses if it consists of one of the following:
 
@@ -27,7 +30,9 @@ namespace HackerCup._2013.Qualification
     The following T lines each contain a message of length s that you got from John.
 
     Output
-    For each of the test cases numbered in order from 1 to T, output "Case #i: " followed by a string stating whether or not it is possible that the message had balanced parentheses. If it is, the string should be "YES", else it should be "NO" (all quotes for clarity only)
+    For each of the test cases numbered in order from 1 to T, output "Case #i: " followed by a string 
+    stating whether or not it is possible that the message had balanced parentheses. If it is, the 
+    string should be "YES", else it should be "NO" (all quotes for clarity only)
 
     Constraints
     1 ≤ length of s ≤ 100
@@ -40,7 +45,8 @@ namespace HackerCup._2013.Qualification
 
         public string[] Execute(params string[] input)
         {
-            throw new NotImplementedException();
+            var result = "YES"; // NO
+            return new [] { result };
         }
     }
 }

@@ -36,7 +36,7 @@ namespace HackerCup.Test
         public void _Auction(string input, string expectedResult)
         {
             var tested = new Auction();
-
+            // http://attachment.fbsbx.com/hackercup_source.php?sid=225247877559478
             Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
 
@@ -49,7 +49,7 @@ namespace HackerCup.Test
         public void _Billboards(string input, string expectedResult)
         {
             var tested = new Billboards();
-
+            // http://attachment.fbsbx.com/hackercup_source.php?sid=283332768388603
             Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }
 

@@ -80,6 +80,30 @@ namespace HackerCup.Test
 
         public void _Security(string input, string expectedResult)
         {
+            /*
+            5
+            2
+            abcd
+            c?ab
+            3
+            ab?c?c
+            ac?c??
+            3
+            ab?c?c
+            aabbdd
+            2
+            aa
+            bb
+            2
+            abcd
+            cdab
+            ===
+            Case #1: abcd
+Case #2: abacac
+Case #3: IMPOSSIBLE
+Case #4: IMPOSSIBLE
+Case #5: abcd
+                */
             var tested = new Security();
             Assert.Equal(expectedResult, tested.Execute(input)[0]);
         }

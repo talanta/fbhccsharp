@@ -26,8 +26,6 @@ namespace HackerCup._2012.Qualification
                 {'u', 0},
                 {'p', 0},
             };
-
-
             foreach (var c in input[0].ToLower())
             {
                 if (!countDic.ContainsKey(c))
