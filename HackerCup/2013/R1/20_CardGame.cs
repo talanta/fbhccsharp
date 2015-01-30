@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HackerCup._2013.R1
 {
@@ -41,9 +38,39 @@ namespace HackerCup._2013.R1
     /// </summary>
     public class CardGame : IExecutable
     {
+        int _n = 0, _k = 0;
+        int[] _a;
+
+        protected void InitializeSet(string[] split1, string[] split2)
+        {
+            _n = int.Parse(split1[0]);
+            _k = int.Parse(split1[1]);
+            var sortedValues = new SortedSet<int>();
+
+            for (int i = 0; i < _n; sortedValues.Add(int.Parse(split2[i++]))) ;
+
+            _a = sortedValues.ToArray();
+        }
+
+        protected int GetMaxCombinationWhereMaxIs(int value, int index)
+        {
+            if (index < _k-1)
+                return 0;
+            if (index == _k-1)
+                return 1;
+            return Maths.Combination(_k-1, index);
+        }
+
+
         public string[] Execute(params string[] input)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            InitializeSet(input[0].Split(' '), input[1].Split(' '));
+
+            for (int i = _n - 1; i >= 0;
+                 result += _a[i] * GetMaxCombinationWhereMaxIs(_a[i], i--)) ; 
+
+            return new [] { result.ToString() };
         }
     }
 }

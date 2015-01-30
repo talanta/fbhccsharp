@@ -101,12 +101,28 @@
     <Compile Include="2014\R3\20_LunchAtFacebook.cs" />
     <Compile Include="2014\R3\33_FortunateWheels.cs" />
     <Compile Include="2014\R3\37_Tours.cs" />
+    <Compile Include="2015\Q\15_CookingBooks.cs" />
+    <Compile Include="2015\Q\30_Resolution.cs" />
+    <Compile Include="2015\Q\55_LaserMaze.cs" />
+    <Compile Include="2015\R1\10_Homework.cs" />
+    <Compile Include="2015\R1\25_Autocomplete.cs" />
+    <Compile Include="2015\R1\25_WinningSports.cs" />
+    <Compile Include="2015\R1\40_CorporateGifting.cs" />
+    <Compile Include="2015\R2\10_LazySort.cs" />
+    <Compile Include="2015\R2\20_AllCritical.cs" />
+    <Compile Include="2015\R2\25_AutocompleteStrikesBack.cs" />
     <Compile Include="IExecutable.cs" />
+    <Compile Include="Maths.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="2015\R3\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="2015\R2\45_FoxSocks.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
