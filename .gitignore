@@ -5,3 +5,8 @@ obj
 HackerCup.sln.ide
 *.user
 packages
+.DS_STORE
+.nuget
+*.sublime-project
+*.sublime-workspace
+*.userprefs

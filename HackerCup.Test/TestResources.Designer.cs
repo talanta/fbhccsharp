@@ -225,5 +225,11 @@ namespace HackerCup.Test {
                 return ResourceManager.GetString("studious_student", resourceCulture);
             }
         }
+
+		public static string card_game {
+			get {
+				return ResourceManager.GetString("card_game", resourceCulture);
+			}
+		}
     }
 }

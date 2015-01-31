@@ -41,11 +41,11 @@ namespace HackerCup._2012.Qualification
             public int Cost { get; private set; }
             public int Weight { get; private set; }
 
-            public Product(int cost, int weight)
-            {
-                Cost = cost;
-                Weight = weight;
-            }
+//            public Product(int cost, int weight)
+//            {
+////                Cost = cost;
+////                Weight = weight;
+//            }
             internal bool Bargain(IList<Product> list)
             {
                 foreach (var B in list)
@@ -80,7 +80,7 @@ namespace HackerCup._2012.Qualification
            
             //(P1, W1, M, K, A, B, C and D)
             var productList = new List<Product>();
-            productList.Add(new Product(p1, w1));
+           // productList.Add(new Product(p1, w1));
             int bargainIndex = 1;
             int terribleIndex = 1;
             for (int i = 1; i < n; i++)
@@ -88,10 +88,10 @@ namespace HackerCup._2012.Qualification
                 int pi = ((a * productList[i - 1].Cost - b) % m) + 1;
                 int wi = ((c * productList[i - 1].Weight - d) % k) + 1;
 
-                var product = new Product(p1, w1);
-                productList.Add(product);
-                if (product.Bargain(productList))
-                    bargainIndex = i+1;
+//                var product = new Product(p1, w1);
+//                productList.Add(product);
+//                if (product.Bargain(productList))
+//                    bargainIndex = i+1;
             }
 
             return new[] { string.Format("{0} {1}", terribleIndex, bargainIndex) };

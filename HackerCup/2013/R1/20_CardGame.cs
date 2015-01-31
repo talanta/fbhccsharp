@@ -52,7 +52,7 @@ namespace HackerCup._2013.R1
             _a = sortedValues.ToArray();
         }
 
-        protected int GetMaxCombinationWhereMaxIs(int value, int index)
+		protected double GetMaxCombinationWhereMaxIs(int value, int index)
         {
             if (index < _k-1)
                 return 0;
@@ -64,7 +64,7 @@ namespace HackerCup._2013.R1
 
         public string[] Execute(params string[] input)
         {
-            int result = 0;
+			double result = 0;
             InitializeSet(input[0].Split(' '), input[1].Split(' '));
 
             for (int i = _n - 1; i >= 0;

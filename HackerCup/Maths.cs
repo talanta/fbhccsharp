@@ -8,21 +8,34 @@ namespace HackerCup
 {
     internal static class Maths
     {
-        public static int Combination(int k, int n)
+		public static double Combination(int k, int n)
         {
             var top = Factorial(n);
-            var bottom = Factorial(k) * Factorial(n - k);
+			var factK = Factorial (k);
+			var factNK = Factorial (n - k);
+			var bottom = factK * factNK;
 
+		
+			if (bottom == 0) {
+				if (bottom == 0) {
+				}
+			}
             return top / bottom;
         }
 
-        public static int Factorial(int n)
+		public static double Factorial(int n)
         {
             if (n <= 2)
                 return n;
-            int result = n;
+			long result = n;
 
-            for (int i = n - 1; i >= 1; result *= (i--)) ;
+			for (int i = n - 1; i > 1; i--) 
+			{
+				var las = result;
+				result *= i;
+				if (result == 0) {
+				}
+			}
 
             return result;
         }
