@@ -8,6 +8,20 @@ namespace HackerCup
 {
     internal static class Maths
     {
+		public static string Min(string a, string b)
+		{
+			if (a.CompareTo(b) < 0)
+				return a;
+			return b;
+		}
+		public static string Max(string a, string b)
+		{
+			if (a.CompareTo(b) >= 0)
+				return a;
+			return b;
+		}
+
+
 		public static double Combination(int k, int n)
         {
             var top = Factorial(n);
