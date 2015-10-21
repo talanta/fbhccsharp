@@ -10,3 +10,4 @@ packages
 *.sublime-project
 *.sublime-workspace
 *.userprefs
+*.ncrunch*
