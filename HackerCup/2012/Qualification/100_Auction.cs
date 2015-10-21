@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HackerCup._2012.Qualification
 {
@@ -36,16 +34,41 @@ namespace HackerCup._2012.Qualification
     /// </summary>
     public class Auction : IExecutable
     {
-        internal struct Product
+        internal class AucGenerator
+        {
+            public int P1 { get; private set; }
+            public int W1 { get; private set; }
+            public int M { get; private set; }
+            public int K { get; private set; }
+            public int A { get; private set; }
+            public int B { get; private set; }
+            public int C { get; private set; }
+            public int D { get; private set; }
+
+            public AucGenerator(int p1, int w1, int m, int k, int a, int b, int c, int d)
+            {
+                P1 = p1;
+                W1 = w1;
+                M = m;
+                K = k;
+                A = a;
+                B = b;
+                C = c;
+                D = d;
+            }
+        }
+        [DebuggerDisplay("Cost {Cost} Weight {Weight}")]
+        internal class Product
         {
             public int Cost { get; private set; }
             public int Weight { get; private set; }
 
-//            public Product(int cost, int weight)
-//            {
-////                Cost = cost;
-////                Weight = weight;
-//            }
+            public Product(int cost, int weight)
+            {
+                Cost = cost;
+                Weight = weight;
+            }
+            //We shall call a product A a bargain if there is no product B such that B is better than A. Similarly, 
             internal bool Bargain(IList<Product> list)
             {
                 foreach (var B in list)
@@ -55,6 +78,7 @@ namespace HackerCup._2012.Qualification
                 }
                 return true;
             }
+            //we shall call a product C a terrible deal if there exists no product D such that C is better than D. 
             internal bool Terrible(IList<Product> list)
             {
                 foreach (var D in list)
@@ -64,40 +88,57 @@ namespace HackerCup._2012.Qualification
                 }
                 return true;
             }
-
+            //We shall say that product A is strictly preferred over product B if A costs less than B and is not 
+            //heavier (they may be of 
+            //equal weight) or if A weighs less and is not more expensive (they can have equal price).
             bool IsPreferableTo(Product B)
             {
-                return (this.Cost < B.Cost && this.Weight <= B.Weight);
+                return (this.Cost < B.Cost && this.Weight <= B.Weight) || (this.Weight < B.Weight && this.Cost <= B.Cost);
             }
         }
-            
-            
+
+
         public string[] Execute(params string[] input)
         {
             int[] vals = input[0].Split(' ').Select(s => int.Parse(s)).ToArray();
-            int n = vals[0], p1 = vals[1], w1 = vals[2], m = vals[3], k = vals[4];
-            int a = vals[5], b = vals[6], c = vals[7], d = vals[8];
-           
+            int n = vals[0];
+
+            var gen = new AucGenerator(vals[1], vals[2], vals[3], vals[4], vals[5], vals[6], vals[7], vals[8]);
             //(P1, W1, M, K, A, B, C and D)
             var productList = new List<Product>();
-           // productList.Add(new Product(p1, w1));
-            int bargainIndex = 1;
-            int terribleIndex = 1;
+            productList.Add(new Product(gen.P1, gen.W1));
+            int bargainIndex = 0;
+            int terribleIndex = 0;
             for (int i = 1; i < n; i++)
             {
-                int pi = ((a * productList[i - 1].Cost - b) % m) + 1;
-                int wi = ((c * productList[i - 1].Weight - d) % k) + 1;
+                int pi = ((gen.A * productList[i - 1].Cost + gen.B) % gen.M) + 1;
+                int wi = ((gen.C * productList[i - 1].Weight + gen.D) % gen.K) + 1;
+                //Pi = ((A*Pi-1 + B) mod M) + 1 (for all i = 2..N)
+                //Wi = ((C*Wi-1 + D) mod K) + 1 (for all i = 2..N)
 
-//                var product = new Product(p1, w1);
-//                productList.Add(product);
-//                if (product.Bargain(productList))
-//                    bargainIndex = i+1;
+                var product = new Product(pi, wi);
+                productList.Add(product);
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                if (productList[i].Bargain(productList))
+                {
+                    bargainIndex++;
+                    continue;
+                }
+                if (productList[i].Terrible(productList))
+                {
+                    terribleIndex++;
+                    continue;
+                }
+
             }
 
             return new[] { string.Format("{0} {1}", terribleIndex, bargainIndex) };
         }
 
-        
+
 
     }
 }
