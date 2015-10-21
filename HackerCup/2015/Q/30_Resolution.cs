@@ -27,9 +27,17 @@ Constraints
     */
     public class Resolution : IExecutable
     {
+//		Food... calories ..protein, carboh Fat..
+//		eat.. not eat.. 1 ..0
+//		P C F
+//		N
+//		TTTT
+//		FFFFF
+//		FFFF
+//		=>
         public string[] Execute(params string[] input)
         {
-            return null;
+			return new []{"yes"};
         }
     }
 }
