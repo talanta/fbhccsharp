@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/talanta/fbhccsharp.svg?branch=master)](https://travis-ci.org/talanta/fbhccsharp.svg?branch=master)
+
 My FB Hackercup solutions in C#
 ==========
 
