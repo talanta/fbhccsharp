@@ -1,0 +1,8 @@
+language: csharp
+solution: HackerCup.sln
+install:
+  - nuget restore HackerCup.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release HackerCup.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./HackerCup.Test/bin/Release/HackerCup.Test.dll
