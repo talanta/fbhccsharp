@@ -1,3 +1,4 @@
+#build config
 language: csharp
 solution: HackerCup.sln
 install:
