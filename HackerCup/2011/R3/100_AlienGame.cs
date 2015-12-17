@@ -60,8 +60,43 @@ namespace HackerCup._2011.R3
     */
     public class AlienGame : IExecutable
     {
+        internal class TestCase
+        {
+            public int P_index_to_determine_value { get; private set; }
+            public int?[] Buckets { get; private set; }
+            public int F_constraint { get; private set; }
+
+            public TestCase(int n, int p, IEnumerable<int> values)
+            {
+                this.P_index_to_determine_value = p;
+                this.Buckets = new int?[n];
+
+                int index = 1;
+                foreach (var value in values)
+                {
+                    if (index == p)
+                    {
+                        F_constraint = value;
+                    }
+                    else
+                    {
+                        Buckets[index - 1] = value;
+                    }
+                    index++;
+                }
+            }
+        }
         public string[] Execute(params string[] input)
         {
+            var split0 = input[0].Split(' ');
+            var bucket_values = input[1].Split(' ').Select(c => int.Parse(c));
+
+            var testCase = new TestCase(int.Parse(split0[0]), int.Parse(split0[1]), bucket_values);
+            if (testCase != null)
+            {
+
+            }
+
             throw new NotImplementedException();
         }
     }

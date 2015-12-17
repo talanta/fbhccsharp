@@ -50,7 +50,7 @@ namespace HackerCup._2015.R1
         readonly int[] _basePrimes = { 2, 3, 5, 7, 11, 13 };
 
         private int getPrimacity(int number, IList<int> memPrimes)
-	 	{
+        {
             if (number <= 1)
             {
                 return 0;
@@ -85,7 +85,7 @@ namespace HackerCup._2015.R1
                 return 1;
             }
             return primacity;
-		}
+        }
 
         private int getCountOfNumberHavingPrimacity(int primacity, int min, int max)
         {

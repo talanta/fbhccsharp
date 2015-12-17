@@ -1,5 +1,7 @@
 bin
 obj
+testrunner
+*.crunchsolution.cache
 *.suo
 /TestResults
 HackerCup.sln.ide
