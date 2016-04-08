@@ -13,3 +13,4 @@ packages
 *.sublime-workspace
 *.userprefs
 *.ncrunch*
+_NCrunch_*

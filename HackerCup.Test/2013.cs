@@ -70,6 +70,7 @@ namespace HackerCup.Test
             Assert.True(Helper.RunLarge<CardGame>(TestResources.card_game, 2));
         }
 
+        [Ignore("TODO")]
         [TestCase("2#abcd#c?ab", "abcd")]
         [TestCase("3#ab?c?c#ac?c??", "abacac")]
         [TestCase("3#ab?c?c#aabbdd", "IMPOSSIBLE")]
