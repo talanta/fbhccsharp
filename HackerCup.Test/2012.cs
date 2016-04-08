@@ -14,11 +14,9 @@ namespace HackerCup.Test
         [TestCase("QUICK CUTE BROWN FOX JUMPS OVER THE LAZY DOG", "1")]
         [TestCase("MOVE FAST BE BOLD", "0")]
         [TestCase("HACK THE HACKERCUP", "1")]
-        public void _AlphabetSoup(string input, string expectedResult)
+        public void _2012_q_AlphabetSoup(string input, string @out)
         {
-            var tested = new AlphabetSoup();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<AlphabetSoup>(input));
         }
 
         [Test]
@@ -59,76 +57,67 @@ namespace HackerCup.Test
             Assert.True(Helper.RunLarge<Billboards>(TestResources.billboards, 1));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _Checkpoint(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r1_Checkpoint(string input, string @out)
         {
-            var tested = new Checkpoint();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Checkpoint>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _RecoverTheSequence(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r1_RecoverTheSequence(string input, string @out)
         {
-            var tested = new RecoverTheSequence();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<RecoverTheSequence>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _SquishedStatus(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r1_SquishedStatus(string input, string @out)
         {
-            var tested = new SquishedStatus();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<SquishedStatus>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _Monopoly(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r2_Monopoly(string input, string @out)
         {
-            var tested = new Monopoly();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Monopoly>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _RoadRemoval(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r2_RoadRemoval(string input, string @out)
         {
-            var tested = new RoadRemoval();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<RoadRemoval>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _SequenceSlicing(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r2_SequenceSlicing(string input, string @out)
         {
-            var tested = new SequenceSlicing();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<SequenceSlicing>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _DivisorFunctionOptimization(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r3_DivisorFunctionOptimization(string input, string @out)
         {
-            var tested = new DivisorFunctionOptimization();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<DivisorFunctionOptimization>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _Trapezoids(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r3_Trapezoids(string input, string @out)
         {
-            var tested = new Trapezoids();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Trapezoids>(input));
         }
 
-        
-        [TestCase("XX", "XX")]
-        public void _Unfriending(string input, string expectedResult)
+
+        [Ignore("todo")]
+        public void _2012_r3_Unfriending(string input, string @out)
         {
-            var tested = new Unfriending();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Unfriending>(input));
         }
     }
 }

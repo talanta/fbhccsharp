@@ -3,7 +3,7 @@
 My FB Hackercup solutions in C#
 ==========
 
-This is my playground for programming improvement. I'll try to reach a 100% coverage first.
+This is my little programming playground. I'll try to reach a 100% coverage first.
 
 2011
 

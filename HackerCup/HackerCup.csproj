@@ -111,12 +111,15 @@
     <Compile Include="2015\R2\10_LazySort.cs" />
     <Compile Include="2015\R2\20_AllCritical.cs" />
     <Compile Include="2015\R2\25_AutocompleteStrikesBack.cs" />
+    <Compile Include="2016\R2\15_Boomrang.cs" />
     <Compile Include="IExecutable.cs" />
     <Compile Include="Maths.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="2015\R3\" />
+    <Folder Include="2016\Q\" />
+    <Folder Include="2016\R1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />

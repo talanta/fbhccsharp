@@ -8,17 +8,15 @@ namespace HackerCup.Test
 {
     public class _2013
     {
-        
+
         [TestCase("ABbCcc", "152")]
         [TestCase("Good luck in the Facebook Hacker Cup this year!", "754")]
         [TestCase("Ignore punctuation, please :)", "491")]
         [TestCase("Sometimes test cases are hard to make up.", "729")]
         [TestCase("So I just go consult Professor Dalves", "646")]
-        public void _BeautifulStrings(string input, string expectedResult)
+        public void _2013_q_BeautifulStrings(string input, string @out)
         {
-            var tested = new BeautifulStrings();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<BeautifulStrings>(input));
         }
 
         [Test]
@@ -27,29 +25,26 @@ namespace HackerCup.Test
             Assert.True(Helper.RunLarge<BeautifulStrings>(TestResources.beautiful_strings, 1));
         }
 
-        
+
         [TestCase(":((", "NO")]
         [TestCase("i am sick today (:()", "YES")]
         [TestCase("(:)", "YES")]
         [TestCase("hacker cup: started :):)", "YES")]
         [TestCase(")(", "NO")]
-        public void _BalancedSmileys(string input, string expectedResult)
+        public void _2013_q_BalancedSmileys(string input, string @out)
         {
-            var tested = new BalancedSmileys();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<BalancedSmileys>(input));
         }
 
-        
-        [TestCase("97 39", "34 37 656 97", "8")]
-        [TestCase("186 75", "68 16 539 186", "38")]
-        [TestCase("137 49", "48 17 461 137", "41")]
-        [TestCase("98 59", "6 30 524 98", "40")]
-        [TestCase("46 18", "7 11 9 46", "12")]
-        public void _FindTheMin(string p0, string p1, string expectedResult)
-        {
-            var tested = new FindTheMin();
 
-            Assert.AreEqual(expectedResult, tested.Execute(p0,p1)[0]);
+        [TestCase("97 39#34 37 656 97", "8")]
+        [TestCase("186 75#68 16 539 186", "38")]
+        [TestCase("137 49#48 17 461 137", "41")]
+        [TestCase("98 59#6 30 524 98", "40")]
+        [TestCase("46 18#7 11 9 46", "12")]
+        public void _2013_q_FindTheMin(string input, string @out)
+        {
+            Assert.AreEqual(@out, Helper.Execute<FindTheMin>(input));
         }
 
         [Test]
@@ -58,104 +53,73 @@ namespace HackerCup.Test
             Assert.True(Helper.RunLarge<FindTheMin>(TestResources.find_the_min, 2));
         }
 
-        
-        [TestCase("4 3", "3 6 2 8", "30")]
-        [TestCase("5 2", "10 20 30 40 50", "400")]
-        [TestCase("6 4", "0 1 2 3 5 8", "103")]
-        [TestCase("2 2", "1069 1122", "1122")]
-        [TestCase("10 5", "10386 10257 10432 10087 10381 10035 10167 10206 10347 10088", "2621483")]
-        public void _CardGame(string p0, string p1, string expectedResult)
-        {
-            var tested = new CardGame();
 
-            Assert.AreEqual(expectedResult, tested.Execute(p0, p1)[0]);
+        [TestCase("4 3#3 6 2 8", "30")]
+        [TestCase("5 2#10 20 30 40 50", "400")]
+        [TestCase("6 4#0 1 2 3 5 8", "103")]
+        [TestCase("2 2#1069 1122", "1122")]
+        [TestCase("10 5#10386 10257 10432 10087 10381 10035 10167 10206 10347 10088", "2621483")]
+        public void _2013_r1_CardGame(string input, string @out)
+        {
+            Assert.AreEqual(@out, Helper.Execute<CardGame>(input));
         }
 
-		[Test]
+        [Test]
         public void _CardGame_large()
         {
             Assert.True(Helper.RunLarge<CardGame>(TestResources.card_game, 2));
         }
 
-
-        public void _Security(string input, string expectedResult)
+        [TestCase("2#abcd#c?ab", "abcd")]
+        [TestCase("3#ab?c?c#ac?c??", "abacac")]
+        [TestCase("3#ab?c?c#aabbdd", "IMPOSSIBLE")]
+        [TestCase("2#aa#bb", "IMPOSSIBLE")]
+        [TestCase("2#abcd#cdab", "abcd")]
+        public void _2013_r1_Security(string input, string @out)
         {
-            /*
-            5
-            2
-            abcd
-            c?ab
-            3
-            ab?c?c
-            ac?c??
-            3
-            ab?c?c
-            aabbdd
-            2
-            aa
-            bb
-            2
-            abcd
-            cdab
-            ===
-            Case #1: abcd
-Case #2: abacac
-Case #3: IMPOSSIBLE
-Case #4: IMPOSSIBLE
-Case #5: abcd
-                */
-            var tested = new Security();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Security>(input));
         }
 
-        public void _DeadPixels(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r1_DeadPixels(string input, string @out)
         {
-            var tested = new DeadPixels();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<DeadPixels>(input));
         }
 
-        public void _CakeCutting(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r2_CakeCutting(string input, string @out)
         {
-            var tested = new CakeCutting();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<CakeCutting>(input));
         }
 
-        public void _RoboElection(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r2_RoboElection(string input, string @out)
         {
-            var tested = new RoboElection();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<RoboElection>(input));
         }
 
-        public void _Permutations(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r2_Permutations(string input, string @out)
         {
-            var tested = new Permutations();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Permutations>(input));
         }
 
-        public void _DigitsWar(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r3_DigitsWar(string input, string @out)
         {
-            var tested = new DigitsWar();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<DigitsWar>(input));
         }
 
-        public void _NameTheBaby(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r3_NameTheBaby(string input, string @out)
         {
-            var tested = new NameTheBaby();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<NameTheBaby>(input));
         }
 
-
-        public void _GreedyEntertainers(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2013_r3_GreedyEntertainers(string input, string @out)
         {
-            var tested = new GreedyEntertainers();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<GreedyEntertainers>(input));
         }
     }
 }

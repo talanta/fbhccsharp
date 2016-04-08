@@ -18,11 +18,9 @@ namespace HackerCup.Test
         [TestCase("3", "0")]
         [TestCase("0", "1")]
         [TestCase("1", "1")]
-        public void Should_return_double_squares_when_execute_input(string input, string expectedResult)
+        public void _2011_q_double_squares_when_execute_input(string input, string @out)
 		{
-            var tested = new DoubleSquares();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<DoubleSquares>(input));
         }
 
         [Test]
@@ -184,11 +182,9 @@ namespace HackerCup.Test
         [TestCase("1 5 10 5 10", "0")]
         [TestCase("5 5 7 2 3", "0")]
         [TestCase("5 2 7 5 12", "149190")]
-        public void _BonusAssignments(string input, string expectedResult)
+        public void _BonusAssignments(string input, string @out)
         {
-            var tested = new BonusAssignments();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<BonusAssignments>(input));
         }
 
 
@@ -210,15 +206,13 @@ namespace HackerCup.Test
 		[TestCase("aabb", "57")]
 		[TestCase("ababa", "642")]
 		[TestCase("bbbbb", "120")]
-        public void _StudiousStudentII(string input, string expectedResult)
+        public void _StudiousStudentII(string input, string @out)
         {
-            var tested = new StudiousStudentII();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<StudiousStudentII>(input));
         }
 
 
-		[TestCase("3 2", "1 2 3", "2")]
+        [TestCase("3 2", "1 2 3", "2")]
 		[TestCase("3 2", "-2 1 -1", "1")]
 		[TestCase("4 2", "4 3 2 1", "5")]
 		[TestCase("4 3", "1 -2 3 -4", "2")]
@@ -231,48 +225,38 @@ namespace HackerCup.Test
         }
 
 
-        [TestCase("XX", "XX")]
-        public void _PartyTime(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _PartyTime(string input, string @out)
         {
-            var tested = new PartyTime();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<PartyTime>(input));
         }
 
 
-        [TestCase("XX", "XX")]
-        public void _SafestPlace(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _SafestPlace(string input, string @out)
         {
-            var tested = new SafestPlace();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<SafestPlace>(input));
         }
 
 
-        [TestCase("XX", "XX")]
-        public void _Almost(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _Almost(string input, string @out)
         {
-            var tested = new Almost();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Almost>(input));
         }
 
 
-        [TestCase("XX", "XX")]
-        public void _Characters(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _Characters(string input, string @out)
         {
-            var tested = new Characters();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Characters>(input));
         }
 
 
-        [TestCase("XX", "XX")]
-        public void _Reverser(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _Reverser(string input, string @out)
         {
-            var tested = new Reverser();
-
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Reverser>(input));
         }
     }
 }

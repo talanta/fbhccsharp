@@ -8,34 +8,33 @@ namespace HackerCup.Test
 {
     public class _2014
     {
-        public void _SquareDetector(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _SquareDetector(string input, string @out)
         {
-            var tested = new SquareDetector();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<SquareDetector>(input));
         }
 
-        public void _BasketballGame(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _BasketballGame(string input, string @out)
         {
-            var tested = new BasketballGame();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<BasketballGame>(input));
         }
 
-        public void _Tennison(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _Tennison(string input, string @out)
         {
-            var tested = new Tennison();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Tennison>(input));
         }
 
-        
+
         [TestCase("EHT 34", "THE")]
         [TestCase("ABCEFKO 4296473", "FACEBOOK")]
         [TestCase("ACEHKMPRTU 4125383079316", "HACKERCUPTEAM")]
         [TestCase("CDEGHIKLOSUWY 8333092520403744490", "WISHESYOUGOODLUCK")]
         [TestCase("ADEFHNOPSUVY 3365973428406169086", "ANDHOPESYOUHAVEFUN")]
-        public void _Labelmaker(string input, string expectedResult)
+        public void _2014_r1_Labelmaker(string input, string @out)
         {
-            var tested = new Labelmaker();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Labelmaker>(input));
         }
 
         [Test]
@@ -44,65 +43,64 @@ namespace HackerCup.Test
             Assert.True(Helper.RunLarge<Labelmaker>(TestResources.labelmaker, 1));
         }
 
-
-        public void _CoinsGame(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _CoinsGame(string input, string @out)
         {
-            var tested = new CoinsGame();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<CoinsGame>(input));
         }
 
-        public void _AAAAAA(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _AAAAAA(string input, string @out)
         {
-            var tested = new AAAAAA();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<AAAAAA>(input));
         }
 
-        public void _PreventingAlzheimers(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _PreventingAlzheimers(string input, string @out)
         {
-            var tested = new PreventingAlzheimers();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<PreventingAlzheimers>(input));
         }
 
-        public void _MagicPairs(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _MagicPairs(string input, string @out)
         {
-            var tested = new MagicPairs();
-
+            Assert.AreEqual(@out, Helper.Execute<MagicPairs>(input));
         }
 
-        public void _HoldemNumbers(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _HoldemNumbers(string input, string @out)
         {
-            var tested = new HoldemNumbers();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<HoldemNumbers>(input));
         }
 
-        public void _SkiResortPlanning(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _SkiResortPlanning(string input, string @out)
         {
-            var tested = new SkiResortPlanning();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<SkiResortPlanning>(input));
         }
 
-        public void _IntervalsOfLove(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _IntervalsOfLove(string input, string @out)
         {
-            var tested = new IntervalsOfLove();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<IntervalsOfLove>(input));
         }
 
-        public void _LunchAtFacebook(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2014_r3_LunchAtFacebook(string input, string @out)
         {
-            var tested = new LunchAtFacebook();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<LunchAtFacebook>(input));
         }
 
-        public void _FortunateWheels(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2014_r3_FortunateWheels(string input, string @out)
         {
-            var tested = new FortunateWheels();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<FortunateWheels>(input));
         }
 
-        public void _Tours(string input, string expectedResult)
+        [Ignore("todo")]
+        public void _2014_r3_Tours(string input, string @out)
         {
-            var tested = new Tours();
-            Assert.AreEqual(expectedResult, tested.Execute(input)[0]);
+            Assert.AreEqual(@out, Helper.Execute<Tours>(input));
         }
 
     }

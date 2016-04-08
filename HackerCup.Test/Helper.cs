@@ -5,6 +5,16 @@ namespace HackerCup.Test
 {
     public class Helper
     {
+        public static string Execute<T>(string inputs) where T : IExecutable, new()
+        {
+            var input = inputs.Split('#');
+            var tartget = new T();
+
+            var output  = tartget.Execute(input);
+
+            return string.Join("#", output);
+
+        }
         public static string[] splitContent(string content)
         {
             string[] split = content.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None);
