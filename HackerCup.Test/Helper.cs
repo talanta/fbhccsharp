@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
+using System.Linq;
 
 namespace HackerCup.Test
 {
-    public class Helper
+    public static class Helper
     {
         public static string Execute<T>(string inputs) where T : IExecutable, new()
         {
@@ -21,9 +23,27 @@ namespace HackerCup.Test
             return split;
         }
 
+        private static string Transform(string input)
+        {
+            const string _type = ";System.String, mscorlib, Version=4.0.0.0";
+            if (!input.Contains(_type)) { return input; }
+            var assembly = typeof(Helper).GetTypeInfo().Assembly;
+            var fileName =(input.Split(';')[0]).Replace('\\','.');
+
+            var allresx = assembly.GetManifestResourceNames();
+            var resx = allresx.FirstOrDefault(f => f.ToUpperInvariant().EndsWith(fileName.ToUpper()));
+            if (null == resx) { throw new InvalidOperationException("Check this out: https://github.com/dotnet/cli/issues/3695"); }
+
+            using (var stream = new StreamReader(assembly.GetManifestResourceStream(resx)))
+            {
+                return stream.ReadToEnd();
+            }
+        }
+
 
         public static bool RunLarge<T>(string content, int numOfInputSplit) where T : IExecutable, new()
         {
+            content = Transform(content);
             string[] split = Helper.splitContent(content);
             int numberOfCases = int.Parse(split[0]);
             T ss = new T();

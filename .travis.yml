@@ -1,9 +1,9 @@
 #build config
 language: csharp
+mono: none
+dotnet: 2.0.0
 solution: HackerCup.sln
-install:
-  - nuget restore HackerCup.sln
-  - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
+
 script:
-  - xbuild /p:Configuration=Release HackerCup.sln
-  - mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./HackerCup.Test/bin/Release/HackerCup.Test.dll
+  - dotnet build
+  - dotnet test HackerCup.Test
